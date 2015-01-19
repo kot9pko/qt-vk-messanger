@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>600</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icon.png</normaloff>icon.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QListWidget" name="dialogList">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>171</width>
+      <height>351</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="messagesList">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>10</y>
+      <width>431</width>
+      <height>301</height>
+     </rect>
+    </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
+    </property>
+    <property name="selectionMode">
+     <enum>QAbstractItemView::MultiSelection</enum>
+    </property>
+    <property name="selectionBehavior">
+     <enum>QAbstractItemView::SelectItems</enum>
+    </property>
+    <property name="textElideMode">
+     <enum>Qt::ElideNone</enum>
+    </property>
+    <property name="verticalScrollMode">
+     <enum>QAbstractItemView::ScrollPerPixel</enum>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="send">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>310</y>
+      <width>71</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Send</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>4</x>
+      <y>-2</y>
+      <width>81</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Диалоги:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>173</x>
+      <y>-2</y>
+      <width>90</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Сообщения:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>330</y>
+      <width>24</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>+</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="messageEdit">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>310</y>
+      <width>361</width>
+      <height>51</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>600</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="actions">
+    <property name="title">
+     <string>Действия</string>
+    </property>
+    <addaction name="refresh"/>
+    <addaction name="add_member"/>
+    <addaction name="ch_dialog_name"/>
+    <addaction name="upd_dialog_photo"/>
+    <addaction name="show_materials"/>
+    <addaction name="search"/>
+    <addaction name="show_history"/>
+    <addaction name="toggle_sound"/>
+    <addaction name="delete_history"/>
+    <addaction name="leave_dialog"/>
+    <addaction name="separator"/>
+    <addaction name="logout"/>
+   </widget>
+   <widget class="QMenu" name="friend_list">
+    <property name="title">
+     <string>Список друзей</string>
+    </property>
+   </widget>
+   <addaction name="actions"/>
+   <addaction name="friend_list"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="add_member">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Добавить собеседника</string>
+   </property>
+  </action>
+  <action name="ch_dialog_name">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Изменить название беседы</string>
+   </property>
+  </action>
+  <action name="upd_dialog_photo">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Обновить фотографию беседы</string>
+   </property>
+  </action>
+  <action name="show_materials">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Показать материалы из беседы</string>
+   </property>
+  </action>
+  <action name="search">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Поиск по истории сообщений</string>
+   </property>
+  </action>
+  <action name="show_history">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Показать всю историю сообщений</string>
+   </property>
+  </action>
+  <action name="toggle_sound">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Выключить уведомления</string>
+   </property>
+  </action>
+  <action name="delete_history">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Удалить историю сообщений</string>
+   </property>
+  </action>
+  <action name="leave_dialog">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Покинуть беседу</string>
+   </property>
+  </action>
+  <action name="refresh">
+   <property name="text">
+    <string>Обновить</string>
+   </property>
+  </action>
+  <action name="logout">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Выйти</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>send</tabstop>
+  <tabstop>messagesList</tabstop>
+  <tabstop>dialogList</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
